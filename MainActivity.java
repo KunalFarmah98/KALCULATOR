@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     boolean n1isfilled = false;
     boolean n2isfilled = false;
+    boolean equalispressed = false;
+    String oldops;
 
     Button b1;
     Button b2;
@@ -47,8 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button log;
     ImageButton back;
     Button dot;
+    Button equals;
 
-    int pressed = 0;
 
 
     @Override
@@ -113,6 +115,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         pow.setOnClickListener(this);
         dot = findViewById(R.id.numdot);
         dot.setOnClickListener(this);
+        equals = findViewById(R.id.equals);
+        equals.setOnClickListener(this);
 
 
     }
@@ -142,341 +146,541 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
+
         switch (v.getId()) {
+
             case R.id.num0:
-                if (!n1isfilled && ops.getText().toString().equals(".")) {
-                    n1.setText("0");
-                    n1isfilled = true;
-                } else if (n1isfilled && ops.getText().toString().equals(".")) {
-                    n1.append("0");
-                    n1isfilled = true;
-                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
-                    n2.setText("0");
-                    n2isfilled = true;
 
-                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
-                        ) {
-                    n2.append("0");
+                if (!equalispressed) {
+                    if (!n1isfilled && ops.getText().toString().equals(".")) {
+                        n1.setText("0");
+                        n1isfilled = true;
+                    } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                        n1.append("0");
+                        n1isfilled = true;
+                    } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                        n2.setText("0");
+                        n2isfilled = true;
+
+                    } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                            ) {
+                        n2.append("0");
+                    }
                 }
+                else if(equalispressed){
+                    if (n1isfilled && !ops.getText().toString().equals(".")) {
+                        n1.setText("0");
+                        n1isfilled=true;
+                        reset();
+                    } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                        n1.append("0");
 
+                    } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                        n2.setText("0");
+                        n2isfilled = true;
 
-            case R.id.num1:
-                if (!n1isfilled && ops.getText().toString().equals(".")) {
-                    n1.setText("1");
-                    n1isfilled = true;
-
-                } else if (n1isfilled && ops.getText().toString().equals(".")) {
-                    n1.append("1");
-                    n1isfilled = true;
-
-                } else if (!n2isfilled && ops.getText().toString().equals(".")) {
-                    n2.setText("1");
-                    n2isfilled = true;
-                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
-                        ) {
-
-                    n2.append("1");
+                    } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                            ) {
+                        n2.append("0");
+                    }
                 }
-
 
                 break;
 
-            case R.id.num2:
+
+        case R.id.num1:
+            if (!equalispressed) {
+                if (!n1isfilled && ops.getText().toString().equals(".")) {
+                    n1.setText("1");
+                    n1isfilled = true;
+                } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                    n1.append("1");
+                    n1isfilled = true;
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                    n2.setText("1");
+                    n2isfilled = true;
+
+                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                        ) {
+                    n2.append("1");
+                }
+            } else if(equalispressed){
+                if (n1isfilled && !ops.getText().toString().equals(".")) {
+                    n1.setText("1");
+                    reset();
+                } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                    n1.append("1");
+
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                    n2.setText("1");
+                    n2isfilled = true;
+
+                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                        ) {
+                    n2.append("1");
+                }
+            }
+
+            break;
+
+        case R.id.num2:
+            if (!equalispressed) {
                 if (!n1isfilled && ops.getText().toString().equals(".")) {
                     n1.setText("2");
                     n1isfilled = true;
                 } else if (n1isfilled && ops.getText().toString().equals(".")) {
                     n1.append("2");
                     n1isfilled = true;
-
-                } else if (!n2isfilled && ops.getText().toString().equals(".")) {
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                     n2.setText("2");
                     n2isfilled = true;
+
                 } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
                     n2.append("2");
                 }
+            } else if(equalispressed){
+                if (n1isfilled && !ops.getText().toString().equals(".")) {
+                    n1.setText("2");
+                    n1isfilled=true;
+                    reset();
+                } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                    n1.append("2");
+                    n1isfilled = true;
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                    n2.setText("2");
+                    n2isfilled = true;
 
+                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                        ) {
+                    n2.append("2");
+                }
+            }
 
-                break;
+            break;
 
-            case R.id.num3:
+        case R.id.num3:
+            if (!equalispressed) {
                 if (!n1isfilled && ops.getText().toString().equals(".")) {
                     n1.setText("3");
                     n1isfilled = true;
                 } else if (n1isfilled && ops.getText().toString().equals(".")) {
                     n1.append("3");
                     n1isfilled = true;
-                } else if (!n2isfilled && ops.getText().toString().equals(".")) {
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                     n2.setText("3");
                     n2isfilled = true;
+
                 } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
-
                     n2.append("3");
                 }
+            } else if(equalispressed){
+                if (n1isfilled && !ops.getText().toString().equals(".")) {
+                    n1.setText("3");
+                    n1isfilled=true;
+                    reset();
+                } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                    n1.append("3");
+                    n1isfilled = true;
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                    n2.setText("3");
+                    n2isfilled = true;
 
+                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                        ) {
+                    n2.append("3");
+                }
+            }
 
-                break;
+            break;
 
-
-            case R.id.num4:
+        case R.id.num4:
+            if (!equalispressed) {
                 if (!n1isfilled && ops.getText().toString().equals(".")) {
                     n1.setText("4");
                     n1isfilled = true;
                 } else if (n1isfilled && ops.getText().toString().equals(".")) {
                     n1.append("4");
                     n1isfilled = true;
-                } else if (!n2isfilled && ops.getText().toString().equals(".")) {
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                     n2.setText("4");
                     n2isfilled = true;
+
                 } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
-
                     n2.append("4");
                 }
+            } else if(equalispressed){
+                if (n1isfilled && !ops.getText().toString().equals(".")) {
+                    n1.setText("4");
+                    n1isfilled=true;
+                    reset();
+                } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                    n1.append("4");
+                    n1isfilled = true;
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                    n2.setText("4");
+                    n2isfilled = true;
+
+                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                        ) {
+                    n2.append("4");
+                }
+            }
+
+            break;
 
 
-                break;
-
-
-            case R.id.num5:
+        case R.id.num5:
+            if (!equalispressed) {
                 if (!n1isfilled && ops.getText().toString().equals(".")) {
                     n1.setText("5");
                     n1isfilled = true;
                 } else if (n1isfilled && ops.getText().toString().equals(".")) {
                     n1.append("5");
                     n1isfilled = true;
-                } else if (!n2isfilled && ops.getText().toString().equals(".")) {
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                     n2.setText("5");
                     n2isfilled = true;
+
                 } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
-
                     n2.append("5");
                 }
-                break;
+            } else if(equalispressed){
+                if (n1isfilled && !ops.getText().toString().equals(".")) {
+                    n1.setText("5");
+                    n1isfilled=true;
+                    reset();
+                } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                    n1.append("5");
+                    n1isfilled = true;
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                    n2.setText("5");
+                    n2isfilled = true;
+
+                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                        ) {
+                    n2.append("5");
+                }
+            }
+
+            break;
 
 
-            case R.id.num6:
+        case R.id.num6:
+            if (!equalispressed) {
                 if (!n1isfilled && ops.getText().toString().equals(".")) {
                     n1.setText("6");
                     n1isfilled = true;
                 } else if (n1isfilled && ops.getText().toString().equals(".")) {
                     n1.append("6");
                     n1isfilled = true;
-                } else if (!n2isfilled && ops.getText().toString().equals(".")) {
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                     n2.setText("6");
                     n2isfilled = true;
+
                 } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
-
                     n2.append("6");
                 }
+            } else if(equalispressed){
+                if (n1isfilled && !ops.getText().toString().equals(".")) {
+                    n1.setText("6");
+                    n1isfilled=true;
+                    reset();
+                } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                    n1.append("6");
+                    n1isfilled = true;
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                    n2.setText("6");
+                    n2isfilled = true;
 
+                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                        ) {
+                    n2.append("6");
+                }
+            }
 
-                break;
+            break;
 
-
-            case R.id.num7:
+        case R.id.num7:
+            if (!equalispressed) {
                 if (!n1isfilled && ops.getText().toString().equals(".")) {
                     n1.setText("7");
                     n1isfilled = true;
                 } else if (n1isfilled && ops.getText().toString().equals(".")) {
                     n1.append("7");
                     n1isfilled = true;
-                } else if (!n2isfilled && ops.getText().toString().equals(".")) {
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                     n2.setText("7");
                     n2isfilled = true;
+
                 } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
                     n2.append("7");
                 }
+            } else if(equalispressed){
+                if (n1isfilled && !ops.getText().toString().equals(".")) {
+                    n1.setText("7");
+                    n1isfilled=true;
+                    reset();
+                } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                    n1.append("7");
+                    n1isfilled = true;
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                    n2.setText("7");
+                    n2isfilled = true;
+
+                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                        ) {
+                    n2.append("7");
+                }
+            }
+
+            break;
 
 
-                break;
-
-
-            case R.id.num8:
+        case R.id.num8:
+            if (!equalispressed) {
                 if (!n1isfilled && ops.getText().toString().equals(".")) {
                     n1.setText("8");
                     n1isfilled = true;
                 } else if (n1isfilled && ops.getText().toString().equals(".")) {
                     n1.append("8");
                     n1isfilled = true;
-                } else if (!n2isfilled && ops.getText().toString().equals(".")) {
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                     n2.setText("8");
                     n2isfilled = true;
+
                 } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
-
                     n2.append("8");
                 }
+            } else if(equalispressed){
+                if (n1isfilled && !ops.getText().toString().equals(".")) {
+                    n1.setText("8");
+                    n1isfilled=true;
+                    reset();
+                } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                    n1.append("8");
+                    n1isfilled = true;
 
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                    n2.setText("8");
+                    n2isfilled = true;
 
-                break;
+                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                        ) {
+                    n2.append("8");
+                }
+            }
 
+            break;
 
-            case R.id.num9:
+        case R.id.num9:
+            if (!equalispressed) {
                 if (!n1isfilled && ops.getText().toString().equals(".")) {
                     n1.setText("9");
                     n1isfilled = true;
                 } else if (n1isfilled && ops.getText().toString().equals(".")) {
                     n1.append("9");
                     n1isfilled = true;
-                } else if (!n2isfilled && ops.getText().toString().equals(".")) {
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                     n2.setText("9");
                     n2isfilled = true;
+
                 } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
-
                     n2.append("9");
                 }
+            } else if(equalispressed){
+                if (n1isfilled && !ops.getText().toString().equals(".")) {
+                    n1.setText("9");
+                   //n1isfilled=true;
+                    reset();
+                } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                    n1.append("9");
+                    n1isfilled = true;
+                } else if (n1isfilled && !n2isfilled && !(ops.getText().toString().equals("."))) {
+                    n2.setText("9");
+                    n2isfilled = true;
 
-
-                break;
-
-            case R.id.add:
-                if (!n1isfilled)
-                    n1.setText("0");
-                ops.setText("+");
-
-                if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
-                    n1.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()));
+                    n2.append("9");
                 }
+            }
 
-                break;
+            break;
 
-            case R.id.sub:
-                if (!n1isfilled)
-                    n1.setText("0");
-                ops.setText("-");
+        case R.id.add:
+        if (!n1isfilled)
+            n1.setText("0");
+       oldops=ops.getText().toString();
+        ops.setText("+");
 
-                if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
-                        ) {
-                    n1.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()));
-                }
-                break;
-
-            case R.id.mul:
-                if (!n1isfilled)
-                    n1.setText("0");
-                ops.setText("X");
-
-                if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
-                        ) {
-                    n1.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()));
-                }
-
-                break;
-
-            case R.id.div:
-                if (!n1isfilled)
-                    n1.setText("0");
-                ops.setText("/");
-
-                if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
-                        ) {
-                    n1.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()));
-                }
-
-                break;
-
-            case R.id.perc:
-                if (!n1isfilled)
-                    throw new ArithmeticException("Please supply an argument");
-                else
-                    ops.setText("%");
-                break;
-
-            //  case R.id.numdot : ops.setText(".");
-
-            case R.id.sqrt:
-                if (!n1isfilled)
-                    ops.setText("sqrt");
-                else
-                    res.setText("Error");
-
-                break;
-
-            case R.id.rem:
-                ops.setText("REM");
-
-            case R.id.log:
-                if (!n1isfilled)
-                    ops.setText("log");
-                else
-                    res.setText("Error");
-
-                break;
-
-
-            case R.id.ln:
-                if (!n1isfilled)
-                    ops.setText("ln");
-                else res.setText("Error");
-
-                break;
-
-            case R.id.backsp:
-
-                if (n2isfilled) {
-
-                    String str = n2.getText().toString();
-                    if (str.length() > 1) {
-                        str = str.substring(0, str.length() - 1);      //deleting 1 element with every touch
-                        n2.setText(str);
-                    } else if (str.length() <= 1) {
-                        n2.setText("0");
-                        n2isfilled = false;
-                    }
-                }
-
-
-                if (!n2isfilled && !ops.getText().toString().equals(".")) {
-                    ops.setText("");
-
-                }
-
-
-                if (!n2isfilled && ops.getText().toString().equals(".") && n1isfilled) {
-                    String str = n2.getText().toString();
-                    if (str.length() > 1) {
-                        str = str.substring(0, str.length() - 1);
-                        n2.setText(str);
-                    } else if (str.length() <= 1) {
-                        n2.setText("0");
-                        n1isfilled = false;
-                    }
-                }
-
-
-            case R.id.equals:
-                int ans = 0;
-                if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
-                        ) {
-                    ans = result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString());
-                    if (ans != -999999999)
-                        res.setText(ans);
-                    else
-                        res.setText("NaNi");
-                } else if (!n2isfilled) {
-                    res.setText(n1.getText().toString());
-
-                } else if (!n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
-                        ) {
-                    res.setText(n2.getText().toString());
-
-                } else
-                    res.setText("Nani");
+        if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                ) {
+            Integer ans = result(n1.getText().toString(), n2.getText().toString(),oldops);
+            n1.setText(ans.toString());
+            ops.setText("+");
+            n2.setText("0");
+            n2isfilled=false;
         }
 
+        break;
+
+        case R.id.sub:
+        if (!n1isfilled)
+            n1.setText("");
+            oldops =ops.getText().toString();
+        ops.setText("-");
+
+        if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                ) {
+            Integer ans = result(n1.getText().toString(), n2.getText().toString(), oldops);
+            n1.setText(ans.toString());
+            ops.setText("-");
+            n2.setText("");
+            n2isfilled=false;
+        }
+        break;
+
+        case R.id.mul:
+        if (!n1isfilled)
+            n1.setText("0");
+            oldops =ops.getText().toString();
+        ops.setText("X");
+
+        if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                ) {
+            Integer ans = result(n1.getText().toString(), n2.getText().toString(), oldops);
+            n1.setText(ans.toString());
+            ops.setText("X");
+            n2.setText("");
+            n2isfilled=false;
+        }
+
+        break;
+
+        case R.id.div:
+        if (!n1isfilled)
+            n1.setText("0");
+            oldops =ops.getText().toString();
+        ops.setText("/");
+
+        if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                ) {
+
+
+            Integer ans = result(n1.getText().toString(), n2.getText().toString(), oldops);
+            n1.setText(ans.toString());
+            ops.setText("/");
+            n2.setText("");
+            n2isfilled=false;
+        }
+
+        break;
+
+        case R.id.perc:
+        if (!n1isfilled)
+            throw new ArithmeticException("Please supply an argument");
+        else
+            ops.setText("%");
+        break;
+
+        //  case R.id.numdot : ops.setText(".");
+
+        case R.id.sqrt:
+        if (!n1isfilled)
+            ops.setText("sqrt");
+        else
+            res.setText("Error");
+
+        break;
+
+        case R.id.rem:
+        ops.setText("REM");
+
+        case R.id.log:
+        if (!n1isfilled)
+            ops.setText("log");
+        else
+            res.setText("Error");
+
+        break;
+
+
+        case R.id.ln:
+        if (!n1isfilled)
+            ops.setText("ln");
+        else res.setText("Error");
+
+        break;
+
+        case R.id.backsp:
+
+        if (n2isfilled) {
+
+            String str = n2.getText().toString();
+            if (str.length() > 1) {
+                str = str.substring(0, str.length() - 1);      //deleting 1 element with every touch
+                n2.setText(str);
+            } else if (str.length() <= 1) {
+                n2.setText("0");
+                n2isfilled = false;
+            }
+        }
+
+
+        if (!n2isfilled && !ops.getText().toString().equals(".")) {
+            ops.setText(".");
+
+        }
+
+
+        if (!n2isfilled && ops.getText().toString().equals(".") && n1isfilled) {
+            String str = n1.getText().toString();
+            if (str.length() > 1) {
+                str = str.substring(0, str.length() - 1);
+                n1.setText(str);
+            } else if (str.length() <= 1) {
+                n1.setText("0");
+                n1isfilled = false;
+            }
+        }
+
+
+        case R.id.equals:
+
+            equalispressed = true;
+            Integer ans;
+
+        if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                ) {
+            ans = result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString());
+            if (ans != -999999999)
+                res.setText(ans.toString());
+            else
+                res.setText("NaNi");
+        } else if (!n2isfilled) {
+            res.setText(n1.getText().toString());
+
+        } else if (!n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                ) {
+            res.setText(n2.getText().toString());
+
+        } else
+            res.setText("Nani");
     }
 
-    int result(String n1, String n2, String ops) {
+}
 
-        int ans = 0;
+    Integer result(String n1, String n2, String ops) {
+
+        Integer ans = 0;
 
         switch (ops) {
 
@@ -502,5 +706,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         return ans;
+    }
+
+    void reset() {
+
+        ops.setText(".");
+        n2.setText("0");
+        n2isfilled=false;
     }
 }
