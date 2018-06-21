@@ -1,8 +1,6 @@
 package com.example.kunalfarmah.kalculator;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -11,6 +9,9 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import java.lang.Math.*;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean n1isfilled = false;
     boolean n2isfilled = false;
     boolean equalispressed = false;
-    int f=0;
+    int f = 0;
     String oldops;
 
     Button b1;
@@ -161,27 +162,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                         n2.setText("0");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("0");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 } else if (equalispressed) {
-                    if (n1isfilled && !ops.getText().toString().equals(".")&&f==0) {
+                    if (n1isfilled && !ops.getText().toString().equals(".") && f == 0) {
                         n1.setText("0");
                         n1isfilled = true;
-                        f=1;
+                        f = 1;
                         reset();
                     } else if (n1isfilled && ops.getText().toString().equals(".")) {
                         n1.append("0");
 
-                    } else if (!n2isfilled && !ops.getText().toString().equals(".")&&f==1) {
+                    } else if (!n2isfilled && !ops.getText().toString().equals(".") && f == 1) {
                         n2.setText("0");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("0");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 }
 
@@ -199,26 +204,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                         n2.setText("1");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
+
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("1");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 } else if (equalispressed) {
-                    if (n1isfilled && !ops.getText().toString().equals(".") && f==0) {
+                    if (n1isfilled && !ops.getText().toString().equals(".") && f == 0) {
                         n1.setText("1");
-                        f=1;
+                        f = 1;
                         reset();
                     } else if (n1isfilled && ops.getText().toString().equals(".")) {
                         n1.append("1");
 
-                    } else if (n1isfilled && !n2isfilled && !ops.getText().toString().equals(".") &&f==1) {
+                    } else if (n1isfilled && !n2isfilled && !ops.getText().toString().equals(".") && f == 1) {
                         n2.setText("1");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("1");
+
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 }
                 break;
@@ -234,27 +245,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                         n2.setText("2");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("2");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 } else if (equalispressed) {
-                    if (n1isfilled && !ops.getText().toString().equals(".")&&f==0) {
+                    if (n1isfilled && !ops.getText().toString().equals(".") && f == 0) {
                         n1.setText("2");
-                        f=1;
+                        f = 1;
                         n1isfilled = true;
                         reset();
                     } else if (n1isfilled && ops.getText().toString().equals(".")) {
                         n1.append("2");
                         n1isfilled = true;
-                    } else if (!n2isfilled && !ops.getText().toString().equals(".")&&f==1) {
+                    } else if (!n2isfilled && !ops.getText().toString().equals(".") && f == 1) {
                         n2.setText("2");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("2");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 }
 
@@ -271,27 +286,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                         n2.setText("3");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("3");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 } else if (equalispressed) {
-                    if (n1isfilled && !ops.getText().toString().equals(".")&&f==0) {
+                    if (n1isfilled && !ops.getText().toString().equals(".") && f == 0) {
                         n1.setText("3");
                         n1isfilled = true;
-                        f=1;
+                        f = 1;
                         reset();
                     } else if (n1isfilled && ops.getText().toString().equals(".")) {
                         n1.append("3");
                         n1isfilled = true;
-                    } else if (!n2isfilled && !ops.getText().toString().equals(".") && f==1) {
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
+                    } else if (!n2isfilled && !ops.getText().toString().equals(".") && f == 1) {
                         n2.setText("3");
                         n2isfilled = true;
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("3");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 }
 
@@ -309,30 +328,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                         n2.setText("4");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
+
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("4");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 } else if (equalispressed) {
-                    if (n1isfilled && !ops.getText().toString().equals(".")&& f==0) {
+                    if (n1isfilled && !ops.getText().toString().equals(".") && f == 0) {
                         n1.setText("4");
-                        f=1;
+                        f = 1;
                         n1isfilled = true;
                         reset();
                     } else if (n1isfilled && ops.getText().toString().equals(".")) {
                         n1.append("4");
                         n1isfilled = true;
-                    } else if (!n2isfilled && !ops.getText().toString().equals(".")&& f==1) {
+                    } else if (!n2isfilled && !ops.getText().toString().equals(".") && f == 1) {
                         n2.setText("4");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("4");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 }
-                f=0;
+                f = 0;
                 break;
 
 
@@ -347,27 +371,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                         n2.setText("5");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("5");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 } else if (equalispressed) {
-                    if (n1isfilled && !ops.getText().toString().equals(".") &&f==0) {
+                    if (n1isfilled && !ops.getText().toString().equals(".") && f == 0) {
                         n1.setText("5");
                         n1isfilled = true;
-                         f=1;
+                        f = 1;
                         reset();
                     } else if (n1isfilled && ops.getText().toString().equals(".")) {
                         n1.append("5");
                         n1isfilled = true;
-                    } else if (!n2isfilled && !ops.getText().toString().equals(".")&& f==1) {
+                    } else if (!n2isfilled && !ops.getText().toString().equals(".") && f == 1) {
                         n2.setText("5");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("5");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 }
 
@@ -385,27 +413,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                         n2.setText("6");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("6");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 } else if (equalispressed) {
-                    if (n1isfilled && !ops.getText().toString().equals(".") &&f==0) {
+                    if (n1isfilled && !ops.getText().toString().equals(".") && f == 0) {
                         n1.setText("6");
                         n1isfilled = true;
-                        f=1;
+                        f = 1;
                         reset();
                     } else if (n1isfilled && ops.getText().toString().equals(".")) {
                         n1.append("6");
                         n1isfilled = true;
-                    } else if (!n2isfilled && !ops.getText().toString().equals(".")&& f==1) {
+                    } else if (!n2isfilled && !ops.getText().toString().equals(".") && f == 1) {
                         n2.setText("6");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("6");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 }
 
@@ -422,27 +454,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                         n2.setText("7");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("7");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 } else if (equalispressed) {
-                    if (n1isfilled && !ops.getText().toString().equals(".")&&f==0) {
+                    if (n1isfilled && !ops.getText().toString().equals(".") && f == 0) {
                         n1.setText("7");
                         n1isfilled = true;
-                        f=1;
+                        f = 1;
                         reset();
                     } else if (n1isfilled && ops.getText().toString().equals(".")) {
                         n1.append("7");
                         n1isfilled = true;
-                    } else if (!n2isfilled && !ops.getText().toString().equals(".")&& f==1) {
+                    } else if (!n2isfilled && !ops.getText().toString().equals(".") && f == 1) {
                         n2.setText("7");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("7");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 }
 
@@ -459,29 +495,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         n1isfilled = true;
                     } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                         n2.setText("8");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                         n2isfilled = true;
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("8");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 } else if (equalispressed) {
-                    if (n1isfilled && !ops.getText().toString().equals(".")&&f==0) {
+                    if (n1isfilled && !ops.getText().toString().equals(".") && f == 0) {
                         n1.setText("8");
                         n1isfilled = true;
-                        f=1;
+                        f = 1;
                         reset();
                     } else if (n1isfilled && ops.getText().toString().equals(".")) {
                         n1.append("8");
                         n1isfilled = true;
 
-                    } else if (!n2isfilled && !ops.getText().toString().equals(".")&&f==1) {
+                    } else if (!n2isfilled && !ops.getText().toString().equals(".") && f == 1) {
                         n2.setText("8");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("8");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 }
 
@@ -498,34 +538,87 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                         n2.setText("9");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("9");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 } else if (equalispressed) {
 
 
-                    if (n1isfilled && !ops.getText().toString().equals(".")&&f==0) {
+                    if (n1isfilled && !ops.getText().toString().equals(".") && f == 0) {
                         n1.setText("9");
-                        f=1;
+                        f = 1;
                         //n1isfilled=true;
                         reset();
                     } else if (n1isfilled && ops.getText().toString().equals(".")) {
                         n1.append("9");
 //                        n1isfilled = true;
-                    } else if (!n2isfilled && !(ops.getText().toString().equals("."))&&f==1) {
+                    } else if (!n2isfilled && !(ops.getText().toString().equals(".")) && f == 1) {
                         n2.setText("9");
                         n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
 
                     } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                             ) {
                         n2.append("9");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
                     }
                 }
 
 
                 break;
+
+            case R.id.numdot:
+                if (!equalispressed) {
+                    if (!n1isfilled && ops.getText().toString().equals(".")) {
+                        n1.setText("0");
+                        n1.append(".");
+                        n1isfilled = true;
+                    } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                        n1.append(".");
+                        n1isfilled = true;
+                    } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                        n2.setText("0");
+                        n2.append(".");
+                        n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
+
+                    } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                            ) {
+                        n2.append(".");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
+                    }
+                } else if (equalispressed) {
+
+
+                    if (n1isfilled && !ops.getText().toString().equals(".") && f == 0) {
+                        n1.setText("0");
+                        n1.append(".");
+                        f = 1;
+
+                        reset();
+                    } else if (n1isfilled && ops.getText().toString().equals(".")) {
+                        n1.append(".");
+
+                    } else if (!n2isfilled && !(ops.getText().toString().equals(".")) && f == 1) {
+                        n2.setText("0");
+                        n2.append(".");
+
+                        n2isfilled = true;
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
+
+                    } else if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
+                            ) {
+                        n2.append(".");
+                        res.setText(result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString()).toString());
+                    }
+                }
+
+                break;
+
 
             case R.id.add:
                 if (!n1isfilled)
@@ -535,7 +628,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
-                    Integer ans = result(n1.getText().toString(), n2.getText().toString(), oldops);
+                    Double ans = result(n1.getText().toString(), n2.getText().toString(), oldops);
                     n1.setText(ans.toString());
                     ops.setText("+");
                     n2.setText("0");
@@ -552,7 +645,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
-                    Integer ans = result(n1.getText().toString(), n2.getText().toString(), oldops);
+                    Double ans = result(n1.getText().toString(), n2.getText().toString(), oldops);
                     n1.setText(ans.toString());
                     ops.setText("-");
                     n2.setText("");
@@ -568,7 +661,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
-                    Integer ans = result(n1.getText().toString(), n2.getText().toString(), oldops);
+//                    if(oldops.equals("+") || oldops.equals("-"))
+                    Double ans = result(n1.getText().toString(), n2.getText().toString(), oldops);
                     n1.setText(ans.toString());
                     ops.setText("X");
                     n2.setText("");
@@ -587,7 +681,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         ) {
 
 
-                    Integer ans = result(n1.getText().toString(), n2.getText().toString(), oldops);
+                    Double ans = result(n1.getText().toString(), n2.getText().toString(), oldops);
                     n1.setText(ans.toString());
                     ops.setText("/");
                     n2.setText("");
@@ -603,17 +697,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     ops.setText("%");
                 break;
 
-            //  case R.id.numdot : ops.setText(".");
 
             case R.id.sqrt:
-                if (!n1isfilled)
-                    ops.setText("sqrt");
-                else
-                    res.setText("Error");
+
+                ops.setText("sqrt");
+
 
                 break;
 
             case R.id.rem:
+
                 ops.setText("REM");
 
             case R.id.log:
@@ -644,16 +737,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         n2.setText("0");
                         n2isfilled = false;
                     }
-                }
-
-
-                if (!n2isfilled && !ops.getText().toString().equals(".")) {
+                } else if (!n2isfilled && !ops.getText().toString().equals(".")) {
                     ops.setText(".");
 
-                }
-
-
-                if (!n2isfilled && ops.getText().toString().equals(".") && n1isfilled) {
+                } else if (!n2isfilled && ops.getText().toString().equals(".") && n1isfilled) {
                     String str = n1.getText().toString();
                     if (str.length() > 1) {
                         str = str.substring(0, str.length() - 1);
@@ -662,6 +749,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         n1.setText("0");
                         n1isfilled = false;
                     }
+                } else if (!n1isfilled && !n2isfilled) {
+                    n1.setText("0");
+                    n2.setText("0");
                 }
 
                 break;
@@ -669,12 +759,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.equals:
 
-                Integer ans;
+                Double ans;
 
                 if (n1isfilled && n2isfilled && !(ops.getText().toString().equals("."))
                         ) {
                     ans = result(n1.getText().toString(), n2.getText().toString(), ops.getText().toString());
-                    if (ans != -999999999)
+                    if (ans != -999999999d)
                         res.setText(ans.toString());
                     else
                         res.setText("NaNi");
@@ -685,45 +775,85 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         ) {
                     res.setText(n2.getText().toString());
 
-                } else
-                    res.setText("Nani");
+                } else if (!n2isfilled && !n1isfilled)
+                    res.setText("0");
 
                 equalispressed = true;
-                f=0;
+                f = 0;
                 break;
+
+
+            case R.id.c:
+                resetall();
         }
 
+
+        back.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                resetall();
+                return true;
+            }
+        });
     }
 
-    Integer result(String n1, String n2, String ops) {
 
-        Integer ans = 0;
+    Double result(String n1, String n2, String ops) {
+
+        Double ans_d = 0d;
+        Integer ans_i = 0;
+
 
         switch (ops) {
 
             case "+":
-                ans = Integer.parseInt(n1) + Integer.parseInt(n2);
+                if (!n1.contains(".") && !n2.contains("."))
+                    ans_i = Integer.parseInt(n1) + Integer.parseInt(n2);
+                else
+                    ans_d = Double.parseDouble(n1) + Double.parseDouble(n2);
+
                 break;
             case "-":
-                ans = Integer.parseInt(n1) - Integer.parseInt(n2);
+                if (!n1.contains(".") && !n2.contains("."))
+                    ans_i = Integer.parseInt(n1) - Integer.parseInt(n2);
+                else
+                    ans_d = Double.parseDouble(n1) - Double.parseDouble(n2);
+
                 break;
             case "X":
-                ans = Integer.parseInt(n1) * Integer.parseInt(n2);
-                break;
-            case "/":
-                if (!n2.equals("0"))
-                    ans = Integer.parseInt(n1) / Integer.parseInt(n2);
+                if (!n1.contains(".") && !n2.contains("."))
+                    ans_i = Integer.parseInt(n1) * Integer.parseInt(n2);
+                else
+                    ans_d = Double.parseDouble(n1) * Double.parseDouble(n2);
 
-                else if (n2.equals(0))
-                    ans = -999999999;
                 break;
+
+            case "/":
+                if (!n2.equals("0")) {
+
+                    ans_d = Double.parseDouble(n1) / Double.parseDouble(n2);
+                } else ans_d = -999999999d;
+                break;
+
+
             case "REM":
-                ans = Integer.parseInt(n1) % Integer.parseInt(n2);
+                if (!n1.contains(".") && !n2.contains("."))
+                    ans_i = Integer.parseInt(n1) % Integer.parseInt(n2);
+                else
+                    ans_d = Double.parseDouble(n1) % Double.parseDouble(n2);
+
                 break;
+
+            case "sqrt":
+                if (!n1.contains(".") && !n2.contains("."))
+
+                    ans_d = Double.parseDouble(n1) * (java.lang.Math.sqrt(Double.parseDouble(n2)));
         }
 
-        return ans;
+
+        return (ans_i != 0 ? ans_i : ans_d);
     }
+
 
     void reset() {
 
@@ -731,4 +861,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         n2.setText("0");
         n2isfilled = false;
     }
+
+    void resetall() {
+
+        if(n1isfilled) {
+            n1.setText("0");
+            n1isfilled = false;
+        }
+
+        if(n2isfilled) {
+            n2.setText("0");
+            n2isfilled = false;
+        }
+
+        if(!ops.getText().toString().equals("."))
+        ops.setText(".");
+
+        res.setText("0");
+    }
 }
+
+
+
