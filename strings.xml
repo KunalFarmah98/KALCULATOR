@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Kalculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="less_than">&lt;</string>
+    <string name="greater_than">&gt;"</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
