@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scientific"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/sin"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@id/inv"
+            android:background="#b8faff"
+            android:text="sin"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="@dimen/_13sdp" />
+
+        <Button
+            android:id="@+id/cos"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@+id/sin"
+            android:background="#b8faff"
+            android:text="cos"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="@dimen/_13sdp" />
+
+        <Button
+            android:id="@+id/tan"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@+id/cos"
+            android:background="#b8faff"
+
+            android:text="tan"
+
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="@dimen/_13sdp" />
+
+
+        <Button
+            android:id="@+id/cosec"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignTop="@+id/sin"
+            android:layout_toEndOf="@+id/sin"
+            android:background="#b8faff"
+            android:text="cosec"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="@dimen/_13sdp" />
+
+        <Button
+            android:id="@+id/sec"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@+id/sin"
+            android:layout_toEndOf="@+id/sin"
+            android:background="#b8faff"
+            android:text="sec"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="@dimen/_13sdp" />
+
+        <Button
+            android:id="@+id/inv"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="#b8faff"
+            android:text="inv"
+            android:textColor="#000000"
+            android:textSize="@dimen/_13sdp" />
+
+        <Button
+            android:id="@+id/cot"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@+id/cos"
+            android:layout_toEndOf="@+id/sin"
+            android:background="#b8faff"
+            android:text="cot"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="@dimen/_13sdp" />
+
+
+        <Button
+            android:id="@+id/rad"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/sin"
+            android:background="#b8faff"
+            android:text="RAD"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="@dimen/_13sdp" />
+
+        <Button
+            android:id="@+id/eq"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tan"
+            android:background="#b8faff"
+            android:textColor="#000000"
+            android:text="="
+            android:visibility="gone"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_20sdp" />
+
+        <ImageButton
+            android:id="@+id/backsp_"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_below="@+id/tan"
+            android:layout_toEndOf="@+id/sin"
+            android:background="#b8faff"
+            android:visibility="gone"
+            android:scaleType="centerCrop"
+            android:src="@drawable/back" />
+
+
+    </RelativeLayout>
+
+</FrameLayout>
