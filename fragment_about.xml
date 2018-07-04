@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_5sdp"
+    tools:context=".AboutFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/dev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/_5sdp"
+        android:text="YOUR DEVELOPER"
+        android:textAlignment="center"
+        android:textSize="@dimen/_20sdp" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="59dp"
+        android:padding="@dimen/_5sdp"
+        android:text="This Calculator has been developed by a noob(newbie) android developer Kunal Farmah.
+So please don't get angry if the app doesn't work as expected. It might have been a noob mistake by Me!!
+Just let me know the problem and I will roll out an update ASAP"
+        android:textSize="@dimen/_15sdp" />
+
+    <TextView
+
+        android:id="@+id/smile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="197dp"
+        android:layout_marginEnd="99dp"
+        android:padding="@dimen/_5sdp"
+        android:text="Cheers to ALL :)"
+        android:textAlignment="center"
+        android:textSize="@dimen/_15sdp" />
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="147dp"
+        android:layout_marginEnd="27dp"
+        android:padding="@dimen/_5sdp"
+        android:text="KUNAL FARMAH"
+        android:textSize="@dimen/_15sdp" />
+
+    <TextView
+        android:id="@+id/ADD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/extra1"
+        android:layout_alignStart="@+id/Name"
+        android:padding="@dimen/_5sdp"
+        android:text="NEW DELHI, INDIA"
+        android:textSize="@dimen/_15sdp" />
+
+    <TextView
+        android:id="@+id/extra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:padding="@dimen/_15sdp"
+        android:text="kunalfarmah98@gmail.com"
+        android:textSize="@dimen/_15sdp" />
+
+    <TextView
+        android:id="@+id/extra1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="44dp"
+        android:padding="@dimen/_15sdp"
+        android:text="+91 9654211634"
+        android:textSize="@dimen/_15sdp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/Name"
+        android:layout_marginStart="21dp"
+        android:src="@mipmap/ic_launcher" />
+
+
+</RelativeLayout>

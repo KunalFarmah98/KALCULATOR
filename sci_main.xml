@@ -10,7 +10,7 @@
 
         <Button
             android:id="@+id/close"
-            android:layout_width="@dimen/_15sdp"
+            android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_275sdp"
             android:layout_alignParentLeft="true"
             android:background="@color/colorPrimary"

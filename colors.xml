@@ -4,4 +4,12 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="bck">#b8faff</color>
+    <color name="col1">#ff1493</color>
+    <color name="col2">#aa5511</color>
+    <color name="col3">#aa5511</color>
+    <color name="col4">#b0bb1e</color>
+    <color name="col5">#8b3a62</color>
+    <color name="col6">#00bfff</color>
+    <color name="not_allowed">#ff3500</color>
+    <color name="_default">#b8faff</color>
 </resources>
