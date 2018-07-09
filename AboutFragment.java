@@ -35,6 +35,7 @@ public class AboutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Toast.makeText(getContext(), "onCreateview", Toast.LENGTH_SHORT).show();
+        getActivity().setTitle("ABOUT ME");
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_about, container, false);

@@ -39,6 +39,8 @@ public class UsageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_usage, container, false);
 
+        getActivity().setTitle("USAGE TIPS");
+
         rec = view.findViewById(R.id.Rv);
         RecyclerAdapter rvadapter = new RecyclerAdapter();
 
