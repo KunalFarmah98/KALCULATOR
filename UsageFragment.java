@@ -25,7 +25,7 @@ public class UsageFragment extends Fragment {
     MainActivity var;
     RecyclerView rec;
 
-            FrameLayout frag;
+    FrameLayout frag;
     Button extra;
 
     public UsageFragment() {
@@ -56,16 +56,16 @@ public class UsageFragment extends Fragment {
 
         super.onCreate(savedInstanceState);
 
-        frag=getActivity().findViewById(R.id.frag);
-        extra =getActivity().findViewById(R.id.sci1);
+        frag = getActivity().findViewById(R.id.frag);
+        extra = getActivity().findViewById(R.id.sci1);
 
-        if(extra != null)
+        if (extra != null)
             extra.setVisibility(View.GONE);
-        Toast.makeText(getContext(), "onCreate_frag", Toast.LENGTH_SHORT).show();
+
 
     }
 
-    @Override
+    /*@Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Toast.makeText(getContext(), "onActivityCreated", Toast.LENGTH_SHORT).show();
@@ -82,17 +82,19 @@ public class UsageFragment extends Fragment {
     public void onResume() {
         super.onResume();
         Toast.makeText(getContext(), "onResume_frag", Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
     @Override
     public void onPause() {
         super.onPause();
         frag.setVisibility(View.GONE);
         extra.setVisibility(View.VISIBLE);
-        Toast.makeText(getContext(), "onPause_frag", Toast.LENGTH_SHORT).show();
+        getActivity().setTitle(R.string.app_name);
+        // Toast.makeText(getContext(), "onPause_frag", Toast.LENGTH_SHORT).show();
     }
+}
 
-    @Override
+  /*  @Override
     public void onStop() {
         super.onStop();
         Toast.makeText(getContext(), "onStop_frag", Toast.LENGTH_SHORT).show();
@@ -120,6 +122,5 @@ public class UsageFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         Toast.makeText(getContext(), "onDetach", Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
-}
